@@ -1,5 +1,3 @@
-const env = require("hardhat");
-
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
@@ -7,9 +5,16 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.10",
   networks: {
-    goerli: {
+    testnet: {
       url: process.env.INFURA_ENDPOINT,
       accounts: [process.env.PRIVATE_KEY],
+    },
+    hardhat: {
+      forking: {
+        enabled: true,
+        url: "https://eth-mainnet.g.alchemy.com/v2/TXXNWvago-UaYdNsxL5ixPZOu9R8tqKe",
+      },
+      chainId: 1,
     },
   },
 };

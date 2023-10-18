@@ -6,8 +6,8 @@ async function main() {
     "0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A"
   );
 
-  await sparkToFlash.deployed();
-  console.log("SparkToFlash contract deployed at : ", sparkToFlash.address());
+  await sparkToFlash.waitForDeployment();
+  console.log(`SparkToFlash contract deployed at : ${sparkToFlash.target}`);
 }
 
 main().catch((error) => {
