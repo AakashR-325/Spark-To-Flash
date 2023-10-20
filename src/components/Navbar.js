@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import PropTypes from "prop-types";
+import logo from "../pngwing.com.png";
 
 export default function Navbar({ account, setAccount }) {
   const connectHandler = async () => {
@@ -12,9 +13,22 @@ export default function Navbar({ account, setAccount }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
-        <a className="navbar-brand mx-3" href="#">
+        <img src={logo} height={50} paddingLeft="10px"></img>
+        <a
+          className="navbar-brand mx-3"
+          href="#"
+          style={{
+            fontFamily: "Arial , sans-serif",
+            fontSize: "20px",
+            //border: "1px solid #8d8e8f",
+            backgroundColor: "#384859",
+            padding: "10px",
+            borderRadius: "10px",
+            //boxShadow: "5px 5px #384859",
+          }}
+        >
           Spark-To-Flash
         </a>
         <button
@@ -39,14 +53,23 @@ export default function Navbar({ account, setAccount }) {
           </ul>
           <form className="d-flex" role="search">
             {account ? (
-              <span class="badge bg-secondary">
-                {account.slice(0, 6) + "..." + account.slice(38, 42)}
+              <span
+                class="badge"
+                style={{
+                  height: "30px",
+                  marginRight: "20px",
+                  fontSize: "15px",
+                  border: "2px solid white",
+                }}
+              >
+                {account.slice(0, 8) + "..." + account.slice(34, 42)}
               </span>
             ) : (
               <button
                 type="button"
-                className="btn btn-success"
+                className="btn btn-primary"
                 onClick={connectHandler}
+                style={{ marginRight: "10px" }}
               >
                 Connect
               </button>
