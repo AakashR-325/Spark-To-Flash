@@ -15,16 +15,15 @@ export default function Navbar({ account, setAccount }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
-        <img src={logo} height={50} paddingLeft="10px"></img>
+        <img src={logo} height={40} paddingleft="10px"></img>
         <a
           className="navbar-brand mx-3"
           href="#"
           style={{
             fontFamily: "Arial , sans-serif",
-            fontSize: "20px",
+            fontSize: "25px",
             //border: "1px solid #8d8e8f",
-            backgroundColor: "#384859",
-            padding: "10px",
+            padding: "5px",
             borderRadius: "10px",
             //boxShadow: "5px 5px #384859",
           }}
@@ -54,7 +53,7 @@ export default function Navbar({ account, setAccount }) {
           <form className="d-flex" role="search">
             {account ? (
               <span
-                class="badge"
+                className="badge"
                 style={{
                   height: "30px",
                   marginRight: "20px",
@@ -67,7 +66,7 @@ export default function Navbar({ account, setAccount }) {
             ) : (
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-danger"
                 onClick={connectHandler}
                 style={{ marginRight: "10px" }}
               >
