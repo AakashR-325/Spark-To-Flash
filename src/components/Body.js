@@ -3,6 +3,11 @@ import dai from "../Dai-image.png";
 import usdc from "../output-onlinepngtools(1).png";
 
 export default function Body() {
+
+  const transactionHandler = () => {
+
+  }
+  
   return (
     <div className="container" style={{ marginLeft: "300px" }}>
       <div
@@ -25,6 +30,8 @@ export default function Body() {
               alt="..."
               style={{ marginTop: "2px", marginLeft: "2px" }}
             />
+            <p style = {{marginLeft : "110px" , marginTop : "0px"}}>Token : USDC</p>
+            <p style = {{marginLeft : "110px" , marginTop : "20px"}}>Token Address : 0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8</p>
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -51,6 +58,7 @@ export default function Body() {
                 type="button"
                 className="btn btn-secondary"
                 style={{ marginLeft: "120px" }}
+                onClick = {transactionHandler}
               >
                 Perform Transaction
               </button>
