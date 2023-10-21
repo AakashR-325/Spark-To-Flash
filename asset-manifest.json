@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Spark-To-Flash/static/css/main.e6c13ad2.css",
+    "main.js": "/Spark-To-Flash/static/js/main.0765f19a.js",
+    "static/js/787.a4dcaa13.chunk.js": "/Spark-To-Flash/static/js/787.a4dcaa13.chunk.js",
+    "static/media/pngwing.com.png": "/Spark-To-Flash/static/media/pngwing.com.7fbf473c7ffc45109cdd.png",
+    "static/media/output-onlinepngtools(1).png": "/Spark-To-Flash/static/media/output-onlinepngtools(1).39116a94d5e14cad6f60.png",
+    "static/media/Dai-image.png": "/Spark-To-Flash/static/media/Dai-image.7a5ae9fc19d8c441a63d.png",
+    "static/media/Background.avif": "/Spark-To-Flash/static/media/Background.05d81294e3a351226807.avif",
+    "index.html": "/Spark-To-Flash/index.html",
+    "main.e6c13ad2.css.map": "/Spark-To-Flash/static/css/main.e6c13ad2.css.map",
+    "main.0765f19a.js.map": "/Spark-To-Flash/static/js/main.0765f19a.js.map",
+    "787.a4dcaa13.chunk.js.map": "/Spark-To-Flash/static/js/787.a4dcaa13.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0765f19a.js"
+  ]
+}
