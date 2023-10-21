@@ -2,12 +2,29 @@ import React from "react";
 import dai from "../Dai-image.png";
 import usdc from "../output-onlinepngtools(1).png";
 
-export default function Body() {
+export default function Body({contract , provider}) {
 
-  const transactionHandler = () => {
-
+  const transactionHandler = async () => {
+    const value = document.getElementById("input").value * 10 **6;
+    const signer = await provider.getSigner();
+    try{
+      let transaction = await contract.connect(signer).requestFlashLoan("0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8" , value);
+      await transaction.wait();
+    }catch(e){
+      console.log(e);
+    }
   }
-  
+
+  const withdrawHandler = async () => {
+    const signer = await provider.getSigner();
+    try{
+      let transaction = await contract.connect(signer).withdraw("0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8");
+      await transaction.wait();
+    }catch(e){
+      console.log(e);
+    }
+  }
+
   return (
     <div className="container" style={{ marginLeft: "300px" }}>
       <div
@@ -46,6 +63,7 @@ export default function Body() {
                   type="text"
                   className="form-control"
                   aria-label="Sizing example input"
+                  id = "input"
                   aria-describedby="inputGroup-sizing-sm"
                   style={{
                     maxWidth: "300px",
@@ -54,6 +72,7 @@ export default function Body() {
                   }}
                 />
               </div>
+              <div>
               <button
                 type="button"
                 className="btn btn-secondary"
@@ -61,6 +80,15 @@ export default function Body() {
                 onClick = {transactionHandler}
               >
                 Perform Transaction
+              </button>
+              </div>
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ marginLeft: "133px" , marginTop : "60px"}}
+                onClick = {withdrawHandler}
+              >
+                Withdraw Profits
               </button>
             </div>
           </div>

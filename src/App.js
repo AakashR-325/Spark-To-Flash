@@ -13,6 +13,7 @@ const contractAddress = "0xaF56B0271D66aD1aCd674E36D7AC7ed15Dc1fd84"; // SparkTo
 function App() {
   const [account, setAccount] = useState(null);
   const [provider, setProvider] = useState(null);
+  const [contract , setContract] = useState(null);
 
   const blockchainData = async () => {
     //Connect To Blockchain
@@ -21,6 +22,8 @@ function App() {
     const network = provider.getNetwork();
 
     //connect to smart contract
+    const protocol = new ethers.Contract(contractAddress , SparkToFlashABI , provider);
+    setContract(protocol);
   };
 
   useEffect(() => {
@@ -76,7 +79,7 @@ function App() {
           principal amount
         </p>
       </div>
-      <Body />
+      <Body contract={contract} provider={provider}/>
     </div>
   );
 }
